@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Contact" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb1fe185-5dea-4183-bff2-5aa771b25dbd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[person]]>
+	</queryString>
+	<field name="email" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="email"/>
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.Long">
+		<property name="net.sf.jasperreports.json.field.expression" value="phone"/>
+		<fieldDescription><![CDATA[phone]]></fieldDescription>
+	</field>
+	<field name="linkedin" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="linkedin"/>
+		<fieldDescription><![CDATA[linkedin]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="location"/>
+		<fieldDescription><![CDATA[location]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="-11" y="0" width="141" height="20" uuid="a8b92c90-28f0-405d-a2c4-68b59d2387e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ea351d5-b2b6-4a32-9f1a-b6ca789816c8"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="19" y="0" width="371" height="20" uuid="583d2e39-b589-4960-8291-e08c4a07cde9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ea351d5-b2b6-4a32-9f1a-b6ca789816c8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="20" width="370" height="20" uuid="ae4a9699-bab0-4023-9660-dbd7cafa5f6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f439ab8f-a779-4de9-b7b4-a823c1cb34cc"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="20" y="40" width="370" height="20" uuid="eadeedc5-1e16-40a4-a5d1-01b5e53c4dc9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="895d43b6-0a4d-4028-957a-86ddc84c77f8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="-9" y="20" width="15" height="20" uuid="452c1ad3-ae86-4c53-9fce-b65903422982"/>
+				<imageExpression><![CDATA["Template/images/sms.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="-9" y="40" width="15" height="20" uuid="8f8b01dc-8dc5-49dc-b829-338dcfc1c59c"/>
+				<imageExpression><![CDATA["Template/images/mobile.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="6" y="0" width="13" height="20" uuid="9fd59ab2-cfc7-4901-8991-fdcea43d0106"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[|]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="20" width="14" height="20" uuid="624578b6-4c06-4a96-9871-70dc33be3bf1"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[|]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="40" width="14" height="20" uuid="e69840a5-5324-49d6-92d9-09851c1423d4"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[|]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-12" y="3" width="20" height="15" uuid="198d0b7f-90c6-450a-9cee-526a5c964512">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["Template/images/location.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

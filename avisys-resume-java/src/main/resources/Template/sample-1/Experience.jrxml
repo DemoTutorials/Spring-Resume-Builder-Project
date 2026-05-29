@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Experience" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e98f7023-5956-4928-9049-18afe23fdb5a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JAVA-1"/>
+	<queryString language="json">
+		<![CDATA[experienceList]]>
+	</queryString>
+	<field name="company" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="company"/>
+		<fieldDescription><![CDATA[company]]></fieldDescription>
+	</field>
+	<field name="clientName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="clientName"/>
+		<fieldDescription><![CDATA[clientName]]></fieldDescription>
+	</field>
+	<field name="position" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="position"/>
+		<fieldDescription><![CDATA[position]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="description"/>
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="location"/>
+		<fieldDescription><![CDATA[location]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="duration"/>
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="20" uuid="ec8ff277-437c-4540-9ac4-f171aa08c5c5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPERIENCE :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="9f41bf47-5366-4ba1-959f-e1e3c23dbefc"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="74" splitType="Stretch">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="1" y="50" width="544" height="14" uuid="c51d399d-acd6-4ed2-ad52-3be312497133"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement x="400" y="20" width="145" height="15" uuid="e42ccdcb-fb16-4528-a3a4-2fdec042de1b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement x="400" y="1" width="145" height="15" uuid="fb45f47e-2909-4955-b078-a8ac29e7c560"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="340" height="16" uuid="5e40d4e9-8fe6-40c0-b174-aabefa8ade6f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement x="0" y="16" width="340" height="16" uuid="17da2343-f2dc-4553-b00e-c6abf4c7103e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="32" width="340" height="18" uuid="7fc751c1-ed8d-458b-bece-6f586f39f4b5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9cf018b4-4811-487b-a3d3-fc2f72360b40">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="companyLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="company.companyLogo"/>
+		<fieldDescription><![CDATA[companyLogo]]></fieldDescription>
+	</field>
+	<field name="waterMark" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="company.waterMark"/>
+		<fieldDescription><![CDATA[waterMark]]></fieldDescription>
+	</field>
+	<field name="footer" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="company.footer"/>
+		<fieldDescription><![CDATA[footer]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image onErrorType="Blank">
+				<reportElement x="240" y="340" width="160" height="160" uuid="ea7abe7e-2b75-404b-a611-624908cbf4a6"/>
+				<imageExpression><![CDATA[$F{waterMark}]]></imageExpression>
+			</image>
+			<rectangle radius="0">
+				<reportElement positionType="Float" stretchType="ContainerHeight" x="4" y="0" width="221" height="802" forecolor="#E3D2C8" backcolor="#E3D2C8" uuid="7b516776-cd89-46a4-a210-6522aca88219"/>
+			</rectangle>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="41">
+			<image onErrorType="Blank">
+				<reportElement x="470" y="0" width="40" height="40" uuid="e0c911a0-4846-4289-8f34-de1b0f39d03f"/>
+				<imageExpression><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="346" splitType="Stretch">
+			<rectangle>
+				<reportElement key="" positionType="Float" x="61" y="10" width="489" height="210" forecolor="#F7F0F0" backcolor="#F7F0F0" uuid="84de0325-0af5-4601-ab9f-6482201a7963"/>
+			</rectangle>
+			<subreport overflowType="NoStretch">
+				<reportElement x="225" y="20" width="315" height="190" uuid="f6a35cf6-a609-4209-9cfe-ae9f8d4a3931"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Person.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="230" width="212" height="30" isRemoveLineWhenBlank="true" uuid="77e9ff7a-7733-45e3-93d3-3c2a655dba0e"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Contact.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="225" y="230" width="315" height="30" uuid="46da8eed-ca71-487c-8ff9-e8d5c5f71aad"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("experienceList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Experience.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="260" width="211" height="20" isRemoveLineWhenBlank="true" uuid="b4388a58-fe9f-42bb-a56b-e986ac2fb762"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("educationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Education.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="280" width="210" height="50" isRemoveLineWhenBlank="true" uuid="1a36a533-368c-45d7-ab99-2415ec9122f7"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("certificationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Certificate.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="225" y="260" width="154" height="30" uuid="71621782-0d66-4d9a-8562-366bf913672e"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("skillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Skills.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="379" y="260" width="161" height="30" uuid="ee45404a-e05d-4415-9d09-f9509327f873"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("languageList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Language.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="225" y="290" width="315" height="50" uuid="1da9beb9-4cd9-4838-af7f-286b0330d994"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("otherSkillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/OtherSkills.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="60" y="50" width="97" height="91" uuid="2d91324c-abe0-4484-b9bd-5fbc6fca4afa"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Profile_Img.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="-7" y="0" width="568" height="20" uuid="00c4bc9e-1341-4a09-a659-5e765605a75a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{footer}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-7" y="0" width="568" height="1" forecolor="#A66F6A" uuid="1f6f7d3d-dcb6-46ac-b06f-0cf974c57693"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

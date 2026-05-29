@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Person2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4fe417b5-74a9-471a-a3cc-44217c8f3bcd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[person]]>
+	</queryString>
+	<field name="summary" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="summary"/>
+		<fieldDescription><![CDATA[summary]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="name"/>
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="0" y="0" width="277" height="19" uuid="2fb01b01-1822-4e43-aed3-4d0dece16c43"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="3" width="300" height="17" uuid="81feebd6-0ec5-480d-b8fd-634c4e5aa3b5"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$F{summary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

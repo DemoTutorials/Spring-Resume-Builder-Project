@@ -1,0 +1,65 @@
+server:
+  port: ${GATEWAY_PORT}
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: uam
+          uri: lb://UAM-SERVICE
+          predicates:
+            - Path=/uam-service/**
+
+        - id: auth
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth-service/**
+
+        - id: service1
+          uri: lb://SERVICE1
+          predicates:
+            - Path=/service1/**
+          filters:
+            - AuthenticationFilter   # (also fixed typo)
+
+        - id: service2
+          uri: lb://SERVICE2
+          predicates:
+            - Path=/service2/**
+
+        - id: utility
+          uri: lb://UTILITY
+          predicates:
+            - Path=/utility/**
+
+        - id: java-cv
+          uri: lb://JAVA-CV
+          predicates:
+            - Path=/cv/**
+
+        - id: email-service
+          uri: lb://EMAIL-SERVICE
+          predicates:
+            - Path=/email/**
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin
+
+  main:
+    allow-circular-references: true
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=uam
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    show-sql: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka

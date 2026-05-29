@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+						http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+
+	<changeSet id="dev_001_cm" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="common_mst" />
+			</not>
+		</preConditions>
+		<createTable tableName="common_mst">
+			<column name="common_mst_id" type="serial4" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="common_mst_pk"
+					nullable="false" />
+			</column>
+			<column name="mst_name" type="varchar(45)">
+				<constraints nullable="false" />
+			</column>
+			<column name="code" type="varchar(45)">
+				<constraints nullable="false" />
+			</column>
+			<column name="value" type="varchar(45)">
+				<constraints nullable="false" />
+			</column>
+			<column name="local_value" type="varchar(150)" defaultValue="NULL" />
+			<column name="additional_value" type="varchar(45)"
+				defaultValue="NULL" />
+			<column name="foreign_key" type="varchar(45)" defaultValue="NULL" />
+			<column name="description" type="varchar(45)" defaultValue="NULL" />
+			<column name="created_by" type="varchar(50)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_date" type="timestamp"
+				defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="updated_by" type="varchar(50)" defaultValue="NULL" />
+			<column name="updated_date" type="timestamp" defaultValue="NULL" />
+			<column name="status" type="bool" defaultValue="false" />
+			<column name="is_deleted" type="bool" defaultValue="false" />
+			<column name="is_mst" type="bool" defaultValue="false" />
+			<column name="start_date" type="timestamp"
+				defaultValueComputed="CURRENT_TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="end_date" type="timestamp" defaultValue="NULL" />
+			<column name="priority" type="int4" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_dsg" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="designation" />
+			</not>
+		</preConditions>
+		<createTable tableName="designation">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="designation_pk"
+					nullable="false" />
+			</column>
+			<column name="create_date" type="timestamp">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="deleted" type="bool" />
+			<column name="last_update_date" type="timestamp" />
+			<column name="name" type="varchar(255)" />
+			<column name="parent_id" type="int8" />
+			<column name="updated_by" type="varchar(255)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_et" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="email_template" />
+			</not>
+		</preConditions>
+		<createTable tableName="email_template">
+			<column name="email_template_id" type="serial4">
+				<constraints nullable="false" />
+			</column>
+			<column name="email_template_name" type="varchar" />
+			<column name="email_template_content" type="text" />
+			<column name="email_template_version" type="int4" />
+			<column name="is_deleted" type="bool" defaultValue="false" />
+			<column name="created_by" type="varchar(40)" defaultValue="-1" />
+			<column name="updated_by" type="varchar(40)" />
+			<column name="created_at" type="timestamp"
+				defaultValueComputed="now()" />
+			<column name="updated_at" type="timestamp" />
+			<column name="email_template_subject" type="varchar" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_el" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="error_logs" />
+			</not>
+		</preConditions>
+		<createTable tableName="error_logs">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="error_logs_pk"
+					nullable="false" />
+			</column>
+			<column name="date_at" type="timestamp" />
+			<column name="detailed_description" type="varchar" />
+			<column name="message" type="varchar(255)" />
+			<column name="module" type="varchar(255)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_mail" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="mail" />
+			</not>
+		</preConditions>
+		<createTable tableName="mail">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="mail_pk"
+					nullable="false" />
+			</column>
+			<column name="created_by" type="varchar(255)" />
+			<column name="created_date" type="timestamp" />
+			<column name="email_body" type="text" />
+			<column name="email_from" type="varchar(255)" />
+			<column name="email_status" type="varchar(255)" />
+			<column name="email_subject" type="varchar(255)" />
+			<column name="email_template" type="varchar(255)" />
+			<column name="is_deleted" type="bool" />
+			<column name="owner" type="varchar(255)" />
+			<column name="reference_id" type="varchar(255)" />
+			<column name="reference_object_type" type="varchar(255)" />
+			<column name="email_bcc" type="varchar(255)" />
+			<column name="email_cc" type="varchar(255)" />
+			<column name="email_to" type="varchar(255)" />
+			<column name="updated_by" type="varchar(255)" />
+			<column name="updated_date" type="timestamp" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_ma" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="mail_attachment" />
+			</not>
+		</preConditions>
+		<createTable tableName="mail_attachment">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true"
+					primaryKeyName="mail_attachment_pk" nullable="false" />
+			</column>
+			<column name="name" type="text" />
+			<column name="created_by" type="varchar(255)" />
+			<column name="created_date" type="timestamp" />
+			<column name="is_deleted" type="bool" />
+			<column name="owner" type="varchar(255)" />
+			<column name="updated_by" type="varchar(255)" />
+			<column name="updated_date" type="timestamp" />
+			<column name="mail_id" type="int8">
+				<constraints nullable="true" foreignKeyName="mail_fk1"
+					referencedTableName="mail" referencedColumnNames="id" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_notes" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="notes" />
+			</not>
+		</preConditions>
+		<createTable tableName="notes">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="notes_pk"
+					nullable="false" />
+			</column>
+			<column name="created_by" type="varchar(255)" />
+			<column name="created_date" type="timestamp" />
+			<column name="is_deleted" type="bool" />
+			<column name="notes" type="text" />
+			<column name="owner" type="varchar(255)" />
+			<column name="reference_id" type="int8" />
+			<column name="reference_type" type="varchar(255)" />
+			<column name="updated_by" type="varchar(255)" />
+			<column name="updated_date" type="timestamp" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="dev_001_ui" author="avisys">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="user_info" />
+			</not>
+		</preConditions>
+		<createTable tableName="user_info">
+			<column name="id" type="int8" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="user_info_pk"
+					nullable="false" />
+			</column>
+			<column name="contact" type="varchar(255)" />
+			<column name="create_date" type="timestamp">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="deleted" type="bool" />
+			<column name="email" type="varchar(255)" />
+			<column name="enabled" type="bool" />
+			<column name="first_name" type="varchar(255)" />
+			<column name="last_name" type="varchar(255)" />
+			<column name="last_update_date" type="timestamp" />
+			<column name="realm_id" type="varchar(255)" />
+			<column name="reports_to" type="varchar(255)" />
+			<column name="updated_by" type="varchar(255)" />
+			<column name="user_id" type="varchar(255)" />
+			<column name="user_name" type="varchar(255)" />
+			<column name="designation_id" type="int8">
+				<constraints nullable="true" foreignKeyName="designation_fk1"
+					referencedTableName="designation" referencedColumnNames="id" />
+			</column>
+			<column name="profile_image" type="varchar(255)" />
+		</createTable>
+	</changeSet>
+</databaseChangeLog>

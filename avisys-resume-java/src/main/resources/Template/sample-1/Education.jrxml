@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Education" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="125f283f-4f94-4a95-8eaa-f95208f538c3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JAVA-1"/>
+	<queryString language="json">
+		<![CDATA[educationList]]>
+	</queryString>
+	<field name="eduId" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="eduId"/>
+		<fieldDescription><![CDATA[eduId]]></fieldDescription>
+	</field>
+	<field name="qualification" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="qualification"/>
+		<fieldDescription><![CDATA[qualification]]></fieldDescription>
+	</field>
+	<field name="stream" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="stream"/>
+		<fieldDescription><![CDATA[stream]]></fieldDescription>
+	</field>
+	<field name="institution" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="institution"/>
+		<fieldDescription><![CDATA[institution]]></fieldDescription>
+	</field>
+	<field name="completionYear" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="completionYear"/>
+		<fieldDescription><![CDATA[completionYear]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="city"/>
+		<fieldDescription><![CDATA[city]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="state"/>
+		<fieldDescription><![CDATA[state]]></fieldDescription>
+	</field>
+	<field name="country" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="country"/>
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="description"/>
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="createdBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="createdBy"/>
+		<fieldDescription><![CDATA[createdBy]]></fieldDescription>
+	</field>
+	<field name="creationDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="creationDate"/>
+		<fieldDescription><![CDATA[creationDate]]></fieldDescription>
+	</field>
+	<field name="lastUpdateBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="lastUpdateBy"/>
+		<fieldDescription><![CDATA[lastUpdateBy]]></fieldDescription>
+	</field>
+	<field name="lastUpdateDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="lastUpdateDate"/>
+		<fieldDescription><![CDATA[lastUpdateDate]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="location"/>
+		<fieldDescription><![CDATA[location]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="18" uuid="ca599f5e-b1f0-4ef4-a8f1-ceeac7b4ad22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fb1c8a9-467b-40d4-9be2-0e541d8f0837"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDUCATION :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="18" width="550" height="3" uuid="27aea76f-2b48-4b7a-8b1d-fd0687a19c99"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="85" splitType="Stretch">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="20" width="320" height="20" uuid="ec30e922-5d13-4aa6-a4f7-e1eda4bbd6c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="afd24cb9-ee94-4979-9919-833bc5b8ae9e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qualification}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="40" width="320" height="20" uuid="5a45f178-8180-4b14-82c4-9764d2f9c576">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f4ce4df-b735-400e-b9d2-204feb7a6b2b"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stream}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="320" height="20" uuid="6d26a9b2-1062-4e3d-946e-f8970f01f463">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0084fed4-5831-4172-bd5e-74c485296872"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institution}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="60" width="550" height="20" uuid="7115bf90-a201-4de8-87d3-a1b056dac134">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f7d50c61-c27e-4462-8131-e043d1890495"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="424" y="39" width="126" height="18" uuid="3fe5e15a-e32a-426f-bf04-cc04bfc42c6f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="76e35376-0001-4c38-a8c3-49cb9e155a17"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="424" y="21" width="126" height="18" uuid="f47fe71b-049e-40d8-82c7-1adef28c3a51">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dedfb860-af9b-4dff-a925-b816e4972f11"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{completionYear}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

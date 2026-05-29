@@ -1,0 +1,99 @@
+server:
+  port: 6051
+  #ssl:
+    #enabled: true
+    #key-store-type: PKCS12
+    #key-store: classpath:keystore/resume.p12
+    #key-store-password: Avisys@123
+    #key-alias: resume
+  #max-http-header-size: 1000000
+    
+eureka:
+#  instance:
+#    hostname: localhost   
+  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+    service-url:
+      defaultZone : http://localhost:6050//eureka
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: uam
+          uri: lb://UAM-SERVICE
+          predicates: 
+            - Path=/uam-service/**
+            
+        - id: auth
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth-service/**
+          
+              
+        - id: service1
+          uri: lb://SERVICE1
+          predicates:
+            - Path=/service1/**
+          filters:          - AuthonticationFilter
+            
+        - id: service2
+          uri: lb://SERVICE2
+          predicates:
+            - Path=/service2/**
+            
+        - id: utility
+          uri: lb://UTILITY
+          predicates:
+            - Path=/utility/**
+            
+        - id: java-cv
+          uri: lb://JAVA-CV
+          predicates:
+            - Path=/cv/**
+            
+        - id: email-service
+          uri: lb://EMAIL-SERVICE
+          predicates:
+            - Path=/email/**
+            
+      default-filters:
+        - DedupeResponseHeader= Access-Control-Allow-Origin 
+          
+  main:
+     allow-circular-references: true 
+                 
+  application:
+    name: API-GATEWAY
+   
+  datasource: 
+   url : jdbc:postgresql://localhost:5432/resumebuilder?currentSchema=uam
+   username : resumebuilder
+   password : resumebuilder@12345
+    
+   jpa: 
+    show-sql: false
+    
+    
+    
+    
+#  main:
+#    allow-bean-definition-overriding: 'true' 
+    
+#security:
+#  enable-csrf: 'true'
+  
+#config:
+#  file:
+#    path: C:/CRM_Avisys_API_Gateway/api-gateway/api-gateway/src/main/resources/config.properties
+    
+    
+#spring:
+   
+#spring.datasource.username=postgres
+#spring.datasource.password=root
+#spring.jpa.show-sql=true
+ 
+   

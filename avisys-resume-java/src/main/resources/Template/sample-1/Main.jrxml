@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa8494e0-e0b6-4545-839e-b623f91709d1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JAVA-1"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="160" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="30" width="200" height="30" uuid="beb29ae7-06b2-4efe-b28d-e1b023ba183f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("experienceList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Experience.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="80" width="200" height="20" uuid="00d308e1-ff45-4a25-a647-8f4cd713de0a"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("certificationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Certificate.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="100" width="200" height="20" uuid="f00db859-b40e-439a-a737-c4f4aebb51ae"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("skillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Skills.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="140" width="200" height="20" uuid="f448be7e-7506-40ac-a9d5-161e94815ff3"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("languageList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Language.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="60" width="200" height="20" uuid="754f4f4e-8325-43a8-b34f-50689b74ac0a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("educationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Education.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="30" uuid="07d2f5db-a0e2-464f-9ae8-6038ccde6b57"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/Person.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="120" width="200" height="20" uuid="694435d5-83be-4acf-9c3b-9733b32fc91b"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("otherSkillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/sample-1/OtherSkills.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

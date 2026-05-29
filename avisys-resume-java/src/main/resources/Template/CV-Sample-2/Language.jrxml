@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Language" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="386ea603-9bb0-4185-b777-840e94442368">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[languageList]]>
+	</queryString>
+	<field name="language" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="language"/>
+		<fieldDescription><![CDATA[language]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="140" height="20" uuid="12647143-7c48-4832-a5e7-1b231b2b77d9"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Language]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="5" width="189" height="16" uuid="aa1537a4-fb46-4e3d-97f9-85cb437a1a8c"/>
+				<textFieldExpression><![CDATA[$F{language}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="3" width="30" height="20" uuid="d2a98f09-4ffe-475c-8d0b-253a55481db2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["Template/images/bullet.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

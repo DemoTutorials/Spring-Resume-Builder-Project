@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9cf018b4-4811-487b-a3d3-fc2f72360b40">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="760" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement positionType="Float" stretchType="ContainerHeight" x="-1" y="10" width="231" height="750" forecolor="#E3D2C8" backcolor="#E3D2C8" uuid="357a301c-7523-4f94-ab5f-d1fa478fabee"/>
+			</rectangle>
+		</band>
+	</background>
+	<detail>
+		<band height="460" splitType="Stretch">
+			<rectangle>
+				<reportElement key="" positionType="Float" x="105" y="30" width="445" height="149" forecolor="#F7F0F0" backcolor="#F7F0F0" uuid="84de0325-0af5-4601-ab9f-6482201a7963"/>
+			</rectangle>
+			<subreport>
+				<reportElement positionType="Float" x="224" y="30" width="305" height="75" uuid="f6a35cf6-a609-4209-9cfe-ae9f8d4a3931"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Person.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="190" width="212" height="40" uuid="77e9ff7a-7733-45e3-93d3-3c2a655dba0e"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Contact.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="225" y="190" width="303" height="100" uuid="46da8eed-ca71-487c-8ff9-e8d5c5f71aad"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("experienceList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Experience.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="230" width="211" height="120" uuid="b4388a58-fe9f-42bb-a56b-e986ac2fb762"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("educationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Education.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="360" width="212" height="90" uuid="1a36a533-368c-45d7-ab99-2415ec9122f7"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("certificationList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Certificate.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="226" y="290" width="154" height="80" uuid="71621782-0d66-4d9a-8562-366bf913672e"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("skillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Skills.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="380" y="290" width="148" height="80" uuid="ee45404a-e05d-4415-9d09-f9509327f873"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("languageList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Language.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="225" y="370" width="303" height="80" uuid="1da9beb9-4cd9-4838-af7f-286b0330d994"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("otherSkillsList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/OtherSkills.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="61" y="30" width="97" height="91" uuid="2d91324c-abe0-4484-b9bd-5fbc6fca4afa"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("person")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["Template/CV-Sample-2/Profile_Img.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

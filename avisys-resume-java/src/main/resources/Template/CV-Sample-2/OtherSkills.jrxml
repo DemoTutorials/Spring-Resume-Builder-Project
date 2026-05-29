@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OtherSkills" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02366291-3633-4f5b-88c6-e67aa55c277c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CV_Sample-2"/>
+	<queryString language="json">
+		<![CDATA[otherSkillsList]]>
+	</queryString>
+	<field name="otherSkillName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="otherSkillName"/>
+		<fieldDescription><![CDATA[otherSkillName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="90" height="20" uuid="14f4abbf-42da-447a-b008-36cc9e14e79d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Other Skills]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="30" height="20" uuid="bd90b328-b4c8-41ea-b855-f38b1738ae6a"/>
+				<imageExpression><![CDATA["Template/images/bullet.png"]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="30" y="3" width="250" height="15" uuid="545133eb-e469-4c71-81bb-70aa417e2443">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{otherSkillName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

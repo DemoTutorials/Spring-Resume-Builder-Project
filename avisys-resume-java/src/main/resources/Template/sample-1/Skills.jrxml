@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Skills" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1e79a6f-9dd5-40b6-ae62-a52651bfac2e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JAVA-1"/>
+	<queryString language="json">
+		<![CDATA[skillsList]]>
+	</queryString>
+	<field name="skillName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="skillName"/>
+		<fieldDescription><![CDATA[skillName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a2d812ea-599a-4fde-b998-bbeb080fdca4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKILLS:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="5b498fee-28b2-4302-86c9-f5675701205b"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="6" width="110" height="19" uuid="7a43e8f7-e167-4c97-bed2-e997d200eefd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2546b0e3-aa32-48bf-8b37-67bdb0e7cba6"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{skillName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

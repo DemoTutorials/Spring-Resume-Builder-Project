@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Language" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20d4ccb3-eb0a-4267-ac3c-30e81227109a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JAVA-1"/>
+	<queryString language="json">
+		<![CDATA[languageList]]>
+	</queryString>
+	<field name="language" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="language"/>
+		<fieldDescription><![CDATA[language]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="18" uuid="a2a9ec23-d1ae-44fd-947c-67689f2a78b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fb1c8a9-467b-40d4-9be2-0e541d8f0837"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LANGUAGES:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="18" width="545" height="1" uuid="ee48f4c8-489c-48d3-abd3-01deb94fd609"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="3" width="130" height="17" uuid="a6dd6981-b929-48df-8ddf-e167cd737451">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82670cb4-653d-4327-84a3-2479331953c5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{language}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

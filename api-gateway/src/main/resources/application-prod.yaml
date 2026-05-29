@@ -1,0 +1,48 @@
+server:
+  port: ${GATEWAY_PORT}
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+
+        - id: email-service
+          uri: lb://EMAIL_SERVICE
+          predicates:
+            - Path=/email/**
+
+        - id: email-file-service
+          uri: lb://EMAIL_FILE_SERVICE
+          predicates:
+            - Path=/email-file/**
+
+        - id: utility
+          uri: lb://UTILITY
+          predicates:
+            - Path=/utility/**
+
+        - id: uam-service
+          uri: lb://UAM_SERVICE
+          predicates:
+            - Path=/uam/**
+
+  main:
+    allow-circular-references: true
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=uam
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
